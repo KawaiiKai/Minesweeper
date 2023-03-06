@@ -6,7 +6,7 @@ private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> mines = new ArrayList <MSButton>(); //ArrayList of just the minesweeper buttons that are mined
 public int flgged = 0;
 public int flgcnt = 0;
-public int bomb = 10;
+public int bomb = 2;
 void setup ()
 {
     size(400, 400);
