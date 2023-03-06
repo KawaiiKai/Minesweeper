@@ -7,6 +7,7 @@ private ArrayList <MSButton> mines = new ArrayList <MSButton>(); //ArrayList of 
 public int flgged = 0;
 public int flgcnt = 0;
 public int bomb = 2;
+public boolean no = false;
 void setup ()
 {
     size(400, 400);
@@ -66,7 +67,7 @@ public void displayLosingMessage()
         }
       }
     }  
-     
+    no = true; 
     buttons[NUM_ROWS/2][NUM_COLS/2 - 5].setLabel("Y"); 
     buttons[NUM_ROWS/2][NUM_COLS/2 - 4].setLabel("O"); 
     buttons[NUM_ROWS/2][NUM_COLS/2 - 3].setLabel("U"); 
@@ -143,7 +144,9 @@ public class MSButton
     // called by manager
     public void mousePressed () 
     {
-        
+        if(no == true){
+          return; 
+        }
         clicked = true;
         if(mouseButton == RIGHT && flagged == true){
          flagged = false; 
